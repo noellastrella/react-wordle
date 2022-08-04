@@ -3,9 +3,12 @@
 }
 
 .letters{
+    display: flex;
+    text-align: center;
+    align-items: center;
     border: 1px solid #CCC;
     padding:.5em;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: .25em .5em;
     min-width: 2em;
     min-height: 2.5em;

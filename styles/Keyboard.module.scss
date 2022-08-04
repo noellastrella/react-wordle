@@ -3,17 +3,17 @@
     justify-items: center;
     text-align: center;
     flex-wrap: wrap;
-    width: 600px;
+    width: 450px;
 }
 
 .keys{
-    font-size: 2em;
+    font-size: 1.5em;
     padding: .5em;
     border-radius: .5em;
     border: 1px solid #CCC;
-    margin: .5em;
+    margin: .25em;
     user-select: none;
-    min-width: 2em;
+    min-width: 1.5em;
     cursor: pointer;
 
     &:active{
@@ -22,3 +22,13 @@
     }
 }
 
+
+.green{
+    background-color: aquamarine;
+    color: #333;
+}
+
+.yellow{
+    background-color: #FF0;
+    color: #333;
+}
