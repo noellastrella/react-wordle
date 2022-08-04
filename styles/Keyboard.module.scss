@@ -1,0 +1,24 @@
+.keyboard{
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 600px;
+}
+
+.keys{
+    font-size: 2em;
+    padding: .5em;
+    border-radius: .5em;
+    border: 1px solid #CCC;
+    margin: .5em;
+    user-select: none;
+    min-width: 2em;
+    cursor: pointer;
+
+    &:active{
+        color: #333;
+        background-color: #FF0;
+    }
+}
+

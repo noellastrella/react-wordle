@@ -1,0 +1,12 @@
+#wordsContainer{
+    display: flex;
+}
+
+.letters{
+    border: 1px solid #CCC;
+    padding:.5em;
+    font-size: 2em;
+    margin: .25em .5em;
+    min-width: 2em;
+    min-height: 2.5em;
+}
