@@ -8,19 +8,19 @@ import useManageWords from '../hooks/useManageWords';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  
+  let {letterArr, currLetter, keyClick} = useManageWords();
+  const [word, setWord] = useState("");  
+  let words = useGetData("https://noel.lastrella.com/tmp/words.json", setWord);
 
-  let {words,letterArr, currLetter, keyClick} = useManageWords();
-  const [word, setWord] = useState("");
+  console.log(">>>>",word) ///????? WTF!
 
-    useEffect(()=>{
-      let rnd = Math.floor(Math.random()*words.length);
-      setWord(words[rnd])
-      console.log(word)
-    },[])
+
+
   return (
     <div>
-      <WordBoard letterArr={letterArr} currLetter = {currLetter}/>
-      <KeyBoard keyClick={keyClick}/>
+      <WordBoard letterArr={letterArr} currLetter = {currLetter} word={word}/>
+      <KeyBoard keyClick={keyClick} word={word}/>
     </div>
   )
 }

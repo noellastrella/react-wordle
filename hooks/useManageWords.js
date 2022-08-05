@@ -2,7 +2,7 @@ import { useState } from "react";
 import useGetData from "./useGetData";
 
 export default function useManageWords(){
-    let words = useGetData("https://noel.lastrella.com/tmp/words.json");
+    
 
     
     const [letterArr, setLetterArr] = useState(
@@ -52,7 +52,6 @@ export default function useManageWords(){
        
     }
     return { 
-        words,
         letterArr, 
         currLetter, 
         keyClick

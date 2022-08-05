@@ -2,14 +2,15 @@ import axios from 'axios';
 
 import { useEffect, useState } from 'react';
 
-export default function useGetData(url){
+export default function useGetData(url, setWord){
     
-    const [data, setData]= useState([]);
+    
     async function getData(url){
         try{
             let temp = await axios.get(url);
-            await setData(temp.data);
-            console.log(temp.data)
+            let rnd = Math.floor(Math.random()*temp.data.length);
+            setWord(temp.data[rnd]);
+            //console.log(temp.data)
         }catch(e){
             throw(e);
             console.log("There was an error", e);
@@ -21,5 +22,5 @@ export default function useGetData(url){
         getData(url);
     },[])
 
-    return data;
+    //return data;
 }
