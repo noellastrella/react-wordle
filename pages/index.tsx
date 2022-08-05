@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   
-  let {letterArr, currLetter, keyClick} = useManageWords();
+  let {letterArr, currLetter, keyClick,attempt} = useManageWords();
   const [word, setWord] = useState("");  
   let words = useGetData("https://noel.lastrella.com/tmp/words.json", setWord);
 
@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div>
-      <WordBoard letterArr={letterArr} currLetter = {currLetter} word={word}/>
+      <WordBoard letterArr={letterArr} currLetter = {currLetter} word={word} attempt={attempt}/>
       <KeyBoard keyClick={keyClick} word={word}/>
     </div>
   )

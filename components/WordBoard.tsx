@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styles from "../styles/Main.module.scss";
 
-export default function WordBoard({letterArr, currLetter, word}){
+export default function WordBoard({letterArr, currLetter, word, attempt}){
     let letters = letterArr;
     useEffect(()=>{
         letters = letterArr;
@@ -15,12 +15,12 @@ export default function WordBoard({letterArr, currLetter, word}){
                 return(
                     <div id={styles.wordsContainer} key={i}>
                     {arr.map((e,j)=>{
-                        
+                        console.log(i,attempt)
                         let classes;
                         
-                        if(e.l==wordArr[j]){
+                        if(e.l==wordArr[j] && i!=attempt){
                             classes = styles.green;
-                        }else if(wordArr.includes(e.l)){
+                        }else if(wordArr.includes(e.l)  && i!=attempt){
                             classes = styles.yellow;
                         }else{
                             classes = styles.letters;

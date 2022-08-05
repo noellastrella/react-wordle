@@ -54,7 +54,8 @@ export default function useManageWords(){
     return { 
         letterArr, 
         currLetter, 
-        keyClick
+        keyClick,
+        attempt
     }
 
 }
