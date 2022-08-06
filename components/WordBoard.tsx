@@ -1,34 +1,37 @@
 import { useEffect } from "react";
 import styles from "../styles/Main.module.scss";
 
-export default function WordBoard({letterArr, currLetter, word, attempt}){
-    let letters = letterArr;
+export default function WordBoard({letterArr, word, attempt, chosen}){
+    let lettersArray = letterArr;
     useEffect(()=>{
-        letters = letterArr;
+        lettersArray = letterArr;
     }, letterArr);
       
     let wordArr = word.split("");
     //console.log(word)
     return(
         <div id="words">
-            {letters.map((arr,i)=>{
+            {lettersArray.map((arr,i)=>{
                 return(
                     <div id={styles.wordsContainer} key={i}>
                     {arr.map((e,j)=>{
-                        console.log(i,attempt)
-                        let classes;
+
+                        let classes = styles.letters;
                         
-                        if(e.l==wordArr[j] && i!=attempt){
-                            classes = styles.green;
-                        }else if(wordArr.includes(e.l)  && i!=attempt){
-                            classes = styles.yellow;
-                        }else{
-                            classes = styles.letters;
+                        if(e==wordArr[j] && i!=attempt){
+                            classes += ` ${styles.green}`;
+                            chosen[e]="green";
+
+                        }else if(wordArr.includes(e)  && i!=attempt){
+                            classes += ` ${styles.yellow}`;
+                            chosen[e] = "yellow";
+                        }else if(i!=attempt){
+                            chosen[e] = "gray";
                         }
                         
                         return(
                             <div className={classes} key={j} >
-                                {e.l || " "}
+                                {e || " "}
                             </div>
                         )
                     })}

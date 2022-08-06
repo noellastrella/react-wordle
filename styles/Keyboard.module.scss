@@ -22,3 +22,37 @@
     }
 }
 
+
+
+#wordsContainer{
+    display: flex;
+}
+
+.letters{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 1px solid #CCC;
+    padding:.5em;
+    font-size: 1.5em;
+    margin: .25em .5em;
+    min-width: 2em;
+    min-height: 2.5em;
+}
+
+
+
+.green{
+    background-color: aquamarine;
+    color: #333;
+}
+
+.yellow{
+    background-color: #FF0;
+    color: #333;
+}
+
+.gray{
+    background-color: #333;
+    color: #CCC;
+}

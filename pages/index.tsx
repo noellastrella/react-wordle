@@ -9,18 +9,15 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   
-  let {letterArr, currLetter, keyClick,attempt} = useManageWords();
+  let {letterArr, currLetter, keyClick, attempt, letters, chosen} = useManageWords();
   const [word, setWord] = useState("");  
   let words = useGetData("https://noel.lastrella.com/tmp/words.json", setWord);
 
-  console.log(">>>>",word) ///????? WTF!
-
-
-
+  
   return (
     <div>
-      <WordBoard letterArr={letterArr} currLetter = {currLetter} word={word} attempt={attempt}/>
-      <KeyBoard keyClick={keyClick} word={word}/>
+      <WordBoard letterArr={letterArr}  word={word} attempt={attempt} chosen={chosen}/>
+      <KeyBoard keyClick={keyClick} letterArr={letterArr} word={word} attempt={attempt} letters={letters} chosen={chosen}/>
     </div>
   )
 }
