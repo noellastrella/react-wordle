@@ -10,7 +10,7 @@ export default function WordBoard({letterArr, word, attempt, chosen}){
     let wordArr = word.split("");
     //console.log(word)
     return(
-        <div id="words">
+        <div id={styles.words}>
             {lettersArray.map((arr,i)=>{
                 return(
                     <div id={styles.wordsContainer} key={i}>

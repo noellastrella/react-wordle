@@ -12,6 +12,7 @@ export default function KeyBoard({keyClick, word, letterArr, attempt, letters, c
     let classes;
 
     return(
+    <div className={styles.keyboardContainer}>
         <div className={styles.keyboard}>
             {
                 letters.map((e,i)=>{ // iterate over all letters
@@ -25,9 +26,6 @@ export default function KeyBoard({keyClick, word, letterArr, attempt, letters, c
                     }else if(chosen[e]=="gray"){
                         classes += ` ${styles.gray}`;
                     }
-
-
-                    
                     //*/
                     return(
                         <div className={classes} key={i} id={e} onClick={keyClick} data-value={e} >
@@ -37,5 +35,6 @@ export default function KeyBoard({keyClick, word, letterArr, attempt, letters, c
                 })
             }
         </div>
+    </div>
     )
 }
